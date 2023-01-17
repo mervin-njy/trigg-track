@@ -23,7 +23,18 @@ const auth = firebase.auth();
 const firestore = firebase.firestore();
 
 function App() {
-  return <></>;
+  // useAuthState hook:
+  const [user] = useAuthState(auth);
+  // signed in : user = { userID, emailAddress, ... }
+  // signed out: user = null
+  // user ? <ComponentA /> : <SignIn /> => checks for user = null
+
+  return (
+    <div className="App">
+      <header></header>
+      <section>{user ? <Display /> : <SignIn />}</section>
+    </div>
+  );
 }
 
 export default App;
