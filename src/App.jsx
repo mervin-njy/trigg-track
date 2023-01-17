@@ -1,9 +1,10 @@
 import React from "react";
+import Profile from "./components/Profile";
 
 // import firebase SDK - auth + database
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/firestore";
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
+import "firebase/compat/firestore";
 // import firebase hooks
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
@@ -22,6 +23,16 @@ firebase.initializeApp({
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 
+const SignIn = () => {
+  const signInWithGoogle = () => {
+    // triggers a google sign in popup
+    const provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(provider);
+  };
+
+  return <button onClick={signInWithGoogle}>Sign in with Google</button>;
+};
+
 function App() {
   // useAuthState hook:
   const [user] = useAuthState(auth);
@@ -32,7 +43,7 @@ function App() {
   return (
     <div className="App">
       <header></header>
-      <section>{user ? <Display /> : <SignIn />}</section>
+      <section>{user ? <Profile /> : <SignIn />}</section>
     </div>
   );
 }
