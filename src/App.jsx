@@ -1,5 +1,6 @@
 import React from "react";
 import Profile from "./components/Profile";
+import SignIn from "./components/SignIn";
 
 // import firebase SDK - auth + database
 import firebase from "firebase/compat/app";
@@ -22,16 +23,6 @@ firebase.initializeApp({
 // create global variables to access auth & database
 const auth = firebase.auth();
 const firestore = firebase.firestore();
-
-const SignIn = () => {
-  const signInWithGoogle = () => {
-    // triggers a google sign in popup
-    const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider);
-  };
-
-  return <button onClick={signInWithGoogle}>Sign in with Google</button>;
-};
 
 function App() {
   // useAuthState hook:
