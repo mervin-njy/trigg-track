@@ -10,9 +10,10 @@ import "firebase/compat/firestore";
 // import firebase hooks
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
+import { signOut } from "firebase/auth";
 
 // initialize app with unique config
-firebase.initializeApp({
+firebasaswe.initializeApp({
   apiKey: "AIzaSyC6QK0C-TJ6qUxCAkQ2zmiGmz3j1fmoJlY",
   authDomain: "healthlogger-a9842.firebaseapp.com",
   projectId: "healthlogger-a9842",
@@ -45,7 +46,11 @@ const Profile = () => {
   const variableRef = firestore.collection("variables");
   const query = variableRef.orderBy("createdAt").limit(25); // limit argument to be changed to months.days
 
-  const [variables] = useCollectionData(query, { idField: "id" });
+  const [variables] = useCollectionData(query, {
+    idField: "id",
+  });
+  // const [snapshot, loading, error] = useCollection(query, options);
+  console.log(variables);
 
   return (
     <div className="profile">
@@ -67,7 +72,9 @@ function App() {
 
   return (
     <div className="App">
-      <header></header>
+      <header>
+        <button onClick={SignOut}>Sign Out</button>
+      </header>
       <section>{user ? <Profile /> : <SignIn />}</section>
     </div>
   );
