@@ -1,6 +1,7 @@
 import React from "react";
-import Profile from "./components/Profile";
-import SignIn from "./components/SignIn";
+// import Profile from "./components/Profile";
+// import SignIn from "./components/SignIn";
+import VariableDisplay from "./components/VariableDisplay";
 
 // import firebase SDK - auth + database
 import firebase from "firebase/compat/app";
@@ -23,6 +24,39 @@ firebase.initializeApp({
 // create global variables to access auth & database
 const auth = firebase.auth();
 const firestore = firebase.firestore();
+
+const SignIn = () => {
+  const signInWithGoogle = () => {
+    // triggers a google sign in popup
+    const provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(provider);
+  };
+
+  return <button onClick={signInWithGoogle}>Sign in with Google</button>;
+};
+
+const SignOut = () => {
+  return (
+    auth.currentUser && <button onClick={() => auth.signOut()}>Sign Out</button>
+  );
+};
+
+const Profile = () => {
+  const variableRef = firestore.collection("variables");
+  const query = variableRef.orderBy("createdAt").limit(25); // limit argument to be changed to months.days
+
+  const [variables] = useCollectionData(query, { idField: "id" });
+
+  return (
+    <div className="profile">
+      <h2>Welcome!</h2>
+      {variables &&
+        variables.map((variable) => (
+          <VariableDisplay key={variable.id} variable={variable} />
+        ))}
+    </div>
+  );
+};
 
 function App() {
   // useAuthState hook:
