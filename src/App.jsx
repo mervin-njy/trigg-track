@@ -13,7 +13,7 @@ import { useCollectionData } from "react-firebase-hooks/firestore";
 import { signOut } from "firebase/auth";
 
 // initialize app with unique config
-firebasaswe.initializeApp({
+firebase.initializeApp({
   apiKey: "AIzaSyC6QK0C-TJ6qUxCAkQ2zmiGmz3j1fmoJlY",
   authDomain: "healthlogger-a9842.firebaseapp.com",
   projectId: "healthlogger-a9842",
