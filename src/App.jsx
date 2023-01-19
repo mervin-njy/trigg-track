@@ -1,81 +1,57 @@
 import React from "react";
 // import Profile from "./components/Profile";
 // import SignIn from "./components/SignIn";
-import VariableDisplay from "./components/VariableDisplay";
+// import VariableDisplay from "./components/VariableDisplay";
 
-// import firebase SDK - auth + database
-import firebase from "firebase/compat/app";
-import "firebase/compat/auth";
-import "firebase/compat/firestore";
-// import firebase hooks
-import { useAuthState } from "react-firebase-hooks/auth";
-import { useCollectionData } from "react-firebase-hooks/firestore";
-import { signOut } from "firebase/auth";
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 
-// initialize app with unique config
-firebase.initializeApp({
+const firebaseConfig = {
   apiKey: "AIzaSyC6QK0C-TJ6qUxCAkQ2zmiGmz3j1fmoJlY",
   authDomain: "healthlogger-a9842.firebaseapp.com",
   projectId: "healthlogger-a9842",
   storageBucket: "healthlogger-a9842.appspot.com",
   messagingSenderId: "468206095718",
   appId: "1:468206095718:web:a94a929b7f0a68e5004ca7",
-});
-
-// create global variables to access auth & database
-const auth = firebase.auth();
-const firestore = firebase.firestore();
-
-const SignIn = () => {
-  const signInWithGoogle = () => {
-    // triggers a google sign in popup
-    const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider);
-  };
-
-  return <button onClick={signInWithGoogle}>Sign in with Google</button>;
 };
 
-const SignOut = () => {
-  return (
-    auth.currentUser && <button onClick={() => auth.signOut()}>Sign Out</button>
-  );
-};
+// initialize firebase app
+initializeApp(firebaseConfig);
 
-const Profile = () => {
-  const variableRef = firestore.collection("variables");
-  const query = variableRef.orderBy("createdAt").limit(25); // limit argument to be changed to months.days
+// initialize services
+const db = getFirestore();
 
-  const [variables] = useCollectionData(query, {
-    idField: "id",
-  });
-  // const [snapshot, loading, error] = useCollection(query, options);
-  console.log(variables);
+// collection ref - 1st arg: the database to retrieve from, 2nd: the collection name
+const colRef = collection(db, "variables");
 
-  return (
-    <div className="profile">
-      <h2>Welcome!</h2>
-      {variables &&
-        variables.map((variable) => (
-          <VariableDisplay key={variable.id} variable={variable} />
-        ))}
-    </div>
-  );
+// get collection data - function is a promise
+const viewDocs = () => {
+  getDocs(colRef)
+    .then((snapshot) => {
+      const variables = [];
+      snapshot.docs.forEach((doc) => {
+        variables.push({ ...doc.data(), id: doc.id });
+      });
+      console.log(variables);
+    })
+    .catch((err) => {
+      console.error(err.message);
+    });
 };
 
 function App() {
-  // useAuthState hook:
-  const [user] = useAuthState(auth);
   // signed in : user = { userID, emailAddress, ... }
   // signed out: user = null
   // user ? <ComponentA /> : <SignIn /> => checks for user = null
+  viewDocs();
 
   return (
     <div className="App">
-      <header>
+      {/* <header>
         <button onClick={SignOut}>Sign Out</button>
-      </header>
-      <section>{user ? <Profile /> : <SignIn />}</section>
+      </header> 
+      <section>{user ? <Profile /> : <SignIn />}</section> */}
     </div>
   );
 }
