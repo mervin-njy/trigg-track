@@ -29,10 +29,11 @@ select:hover {
   flex-direction: wrap;
 }
 
-.conditionsDisplay {
+.conditionsDisplay,
+.variableDisplay {
   /* display: flex;
   flex-direction: column; */
-  margin: 10px;
+  margin: 5em;
 }
 
 ul {

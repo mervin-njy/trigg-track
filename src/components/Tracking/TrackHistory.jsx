@@ -76,7 +76,10 @@ const TrackHistory = (props) => {
       <section>
         {/* Display date's contents if fetched success and loaded */}
         {!isLoading && display && (
-          <DetailsDisplay conditions={display.conditions.eczema[selection]} />
+          <DetailsDisplay
+            conditions={display.conditions.eczema[selection]}
+            variables={display.variables.diet[selection]}
+          />
         )}
         {/* While fetching, display load spinner */}
         {isLoading && (
