@@ -3,7 +3,7 @@ import LoadingSpinner from "./LoadingSpinner";
 
 import styles from "./TrackHistory.module.css";
 
-const Display = (props) => {
+const TrackHistory = (props) => {
   const [selection, setSelection] = useState("2023-01-20");
   const [display, setDisplay] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -75,17 +75,18 @@ const Display = (props) => {
       <section>
         {/* Display date's contents if fetched success and loaded */}
         {!isLoading && display && (
-          <>
+          <div className="conditions-display">
             {Object.entries(display.conditions.eczema[selection]).map(
               (item, index) => {
                 return (
-                  <li>
-                    <span>{item[0]}:</span> {item[1]}
-                  </li>
+                  <ul key={index}>
+                    <li className="bolder">{item[0]}:</li>
+                    <li>{item[1]} / 10</li>
+                  </ul>
                 );
               }
             )}
-          </>
+          </div>
         )}
         {/* While fetching, display load spinner */}
         {isLoading && (
@@ -96,12 +97,8 @@ const Display = (props) => {
         {/* Display error message if fetch has an error */}
         {!isLoading && error && <p> {error}</p>}
       </section>
-      {/* <div className="variable-container">
-        <div className="variable-title"></div>
-        <ul className="variable-descriptions"></ul>
-      </div> */}
     </div>
   );
 };
 
-export default Display;
+export default TrackHistory;
