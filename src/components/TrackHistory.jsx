@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import LoadingSpinner from "./LoadingSpinner";
 
+import styles from "./TrackHistory.module.css";
+
 const Display = (props) => {
-  const [selection, setSelection] = useState("");
+  const [selection, setSelection] = useState("2023-01-20");
   const [display, setDisplay] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -36,6 +38,16 @@ const Display = (props) => {
     setSelection(event.target.value);
   };
 
+  const generateContent = () => {
+    Object.entries(display.conditions.eczema[selection]).map((item, index) => {
+      return (
+        <li>
+          <span>{item[0]}:</span> {item[1]}
+        </li>
+      );
+    });
+  };
+
   useEffect(() => {
     const url = `https://healthlogger-a9842-default-rtdb.firebaseio.com/users/.json`;
 
@@ -48,7 +60,7 @@ const Display = (props) => {
   }, [selection]);
 
   return (
-    <>
+    <div className="track-history">
       <section>
         <h2>Select Display Group:</h2>
         <div className="selection-container">
@@ -64,9 +76,15 @@ const Display = (props) => {
         {/* Display date's contents if fetched success and loaded */}
         {!isLoading && display && (
           <>
-            {display.conditions.eczema[selection].flare}
-            {display.variables.diet[selection]}
-            <div></div>
+            {Object.entries(display.conditions.eczema[selection]).map(
+              (item, index) => {
+                return (
+                  <li>
+                    <span>{item[0]}:</span> {item[1]}
+                  </li>
+                );
+              }
+            )}
           </>
         )}
         {/* While fetching, display load spinner */}
@@ -82,7 +100,7 @@ const Display = (props) => {
         <div className="variable-title"></div>
         <ul className="variable-descriptions"></ul>
       </div> */}
-    </>
+    </div>
   );
 };
 

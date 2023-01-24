@@ -1,22 +1,23 @@
 import React from "react";
-import NavBar from "./components/NavBar";
+// import NavBar from "./components/NavBar";
+import TrackHistory from "./components/TrackHistory";
 
-const fetchUsers = async () => {
-  fetch("https://healthlogger-a9842-default-rtdb.firebaseio.com/.json")
-    .then((response) => {
-      return response.json();
-    })
-    .then(
-      (data) => {
-        // Work with JSON data here
-        console.log(data);
-        // return data;
-      },
-      (error) => {
-        console.error("onRejected function called: " + error.message);
-      }
-    );
-};
+// const fetchUsers = async () => {
+//   fetch("https://healthlogger-a9842-default-rtdb.firebaseio.com/.json")
+//     .then((response) => {
+//       return response.json();
+//     })
+//     .then(
+//       (data) => {
+//         // Work with JSON data here
+//         console.log(data);
+//         // return data;
+//       },
+//       (error) => {
+//         console.error("onRejected function called: " + error.message);
+//       }
+//     );
+// };
 
 // const postUsers = async () => {
 //   fetch("https://healthlogger-a9842-default-rtdb.firebaseio.com/.json"),
@@ -33,17 +34,12 @@ function App() {
   // signed out: user = null
   // user ? <ComponentA /> : <SignIn /> => checks for user = null
 
-  console.log("fetching...");
-  fetchUsers();
-  // console.log("posting...");
-  // postUsers();
-
   return (
     <>
-      <NavBar />
       {/* Routing between pages
       <div className="App">
       </div> */}
+      <TrackHistory />
     </>
   );
 }
