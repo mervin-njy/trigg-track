@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import LoadingSpinner from "./LoadingSpinner";
+import DetailsDisplay from "./DetailsDisplay";
+import LoadingSpinner from "../Loading/LoadingSpinner";
 
 import styles from "./TrackHistory.module.css";
 
@@ -60,10 +61,10 @@ const TrackHistory = (props) => {
   }, [selection]);
 
   return (
-    <div className="track-history">
+    <div className={styles.TrackHistory}>
       <section>
         <h2>Select Display Group:</h2>
-        <div className="selection-container">
+        <div className={styles.selectionContainer}>
           <select id="selection" onChange={handleSelectionChange}>
             <option value="2023-01-20">2023-01-20</option>
             <option value="2023-01-21">2023-01-21</option>
@@ -75,22 +76,11 @@ const TrackHistory = (props) => {
       <section>
         {/* Display date's contents if fetched success and loaded */}
         {!isLoading && display && (
-          <div className="conditions-display">
-            {Object.entries(display.conditions.eczema[selection]).map(
-              (item, index) => {
-                return (
-                  <ul key={index}>
-                    <li className="bolder">{item[0]}:</li>
-                    <li>{item[1]} / 10</li>
-                  </ul>
-                );
-              }
-            )}
-          </div>
+          <DetailsDisplay conditions={display.conditions.eczema[selection]} />
         )}
         {/* While fetching, display load spinner */}
         {isLoading && (
-          <div className="spinner">
+          <div className="centered">
             <LoadingSpinner />
           </div>
         )}

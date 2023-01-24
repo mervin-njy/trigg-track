@@ -1,0 +1,64 @@
+.TrackHistory {
+  width: 80%;
+  padding: 5em;
+  margin: 5em auto;
+}
+
+/* Section: selection panel */
+.selectionContainer {
+  margin: 2em auto;
+}
+
+select {
+  /* background-color: ; */
+  font-weight: 500;
+  width: 300px;
+
+  padding: 5px;
+  border-radius: 8px;
+}
+
+select:hover {
+  background-color: rgba(45, 52, 54, 1);
+  color: rgba(223, 230, 233, 1);
+}
+
+/* Section: display */
+.detailDisplay {
+  display: flex;
+  flex-direction: wrap;
+}
+
+.conditionsDisplay {
+  /* display: flex;
+  flex-direction: column; */
+  margin: 10px;
+}
+
+ul {
+  display: flex;
+  flex-direction: wrap;
+}
+
+li {
+  width: 100px;
+}
+
+.bolder {
+  font-weight: 800;
+}
+
+.history-title {
+  position: absolute;
+  left: 20%;
+}
+
+.history-descriptions {
+  position: absolute;
+  left: 35%;
+}
+
+li {
+  display: flex;
+  justify-content: left;
+}

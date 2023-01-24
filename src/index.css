@@ -15,13 +15,13 @@ body {
   color: aliceblue;
 }
 
-/* .centered {
+.centered {
   margin: 3rem auto;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-} */
+}
 
 .App {
   position: relative;
@@ -53,46 +53,4 @@ body {
   justify-content: center;
   min-height: 100vh;
   background-color: rgb(40, 37, 53);
-}
-
-main {
-  padding: 10px;
-  height: 80vh;
-  margin: 10vh 0 10vh;
-  overflow-y: scroll;
-  display: flex;
-  flex-direction: column;
-}
-
-/* main::-webkit-scrollbar {
-  width: 0.25rem;
-} */
-
-/* main::-webkit-scrollbar-track {
-  background: #1e1e24;
-}
-
-main::-webkit-scrollbar-thumb {
-  background: #6649b8;
-} */
-
-form {
-  height: 10vh;
-  position: fixed;
-  bottom: 0;
-  background-color: rgb(24, 23, 23);
-  width: 100%;
-  max-width: 728px;
-  display: flex;
-  font-size: 1.5rem;
-}
-
-form,
-button {
-  width: 20%;
-  background-color: rgb(92, 136, 191);
-  color: aliceblue;
-
-  padding: 5px 3px;
-  margin: 0 auto;
 }
