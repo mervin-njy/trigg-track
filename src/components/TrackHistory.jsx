@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import loadingSpinner from "./LoadingSpinner";
+import LoadingSpinner from "./LoadingSpinner";
 
 const Display = (props) => {
   const [selection, setSelection] = useState("");
@@ -61,6 +61,7 @@ const Display = (props) => {
 
       <br />
       <section>
+        {/* Display date's contents if fetched success and loaded */}
         {!isLoading && display && (
           <>
             {display.conditions.eczema[selection].flare}
@@ -68,6 +69,14 @@ const Display = (props) => {
             <div></div>
           </>
         )}
+        {/* While fetching, display load spinner */}
+        {isLoading && (
+          <div className="spinner">
+            <LoadingSpinner />
+          </div>
+        )}
+        {/* Display error message if fetch has an error */}
+        {!isLoading && error && <p> {error}</p>}
       </section>
       {/* <div className="variable-container">
         <div className="variable-title"></div>
