@@ -1,0 +1,22 @@
+.history-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 80%;
+  margin: 5em auto;
+}
+
+.history-title {
+  position: absolute;
+  left: 20%;
+}
+
+.history-descriptions {
+  position: absolute;
+  left: 35%;
+}
+
+li {
+  display: flex;
+  justify-content: left;
+}

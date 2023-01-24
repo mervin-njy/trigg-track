@@ -96,26 +96,3 @@ button {
   padding: 5px 3px;
   margin: 0 auto;
 }
-
-.variable-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  width: 80%;
-  margin: 5em auto;
-}
-
-.variable-title {
-  position: absolute;
-  left: 20%;
-}
-
-.variable-descriptions {
-  position: absolute;
-  left: 35%;
-}
-
-li {
-  display: flex;
-  justify-content: left;
-}
