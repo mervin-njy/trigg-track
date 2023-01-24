@@ -18,19 +18,17 @@ const fetchUsers = async () => {
         console.error("onRejected function called: " + error.message);
       }
     );
-  console.log("posting...");
-  postUsers();
 };
 
-const postUsers = async () => {
-  fetch("https://healthlogger-a9842-default-rtdb.firebaseio.com/.json"),
-    {
-      method: "POST",
-      body: JSON.stringify({
-        user: { conditions: { eczema: 6 } },
-      }),
-    };
-};
+// const postUsers = async () => {
+//   fetch("https://healthlogger-a9842-default-rtdb.firebaseio.com/.json"),
+//     {
+//       method: "POST",
+//       body: JSON.stringify({
+//         user: { conditions: { eczema: 6 } },
+//       }),
+//     };
+// };
 
 function App() {
   // signed in : user = { userID, emailAddress, ... }
