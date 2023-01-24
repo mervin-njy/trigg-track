@@ -18,7 +18,10 @@ const Display = (props) => {
       const data = await rest.json();
 
       setDisplay({
-        // display data from firebase rtdb
+        id: data.id,
+        name: data.name,
+        conditions: data.conditions,
+        variables: data.variables,
       });
     } catch (err) {
       if (err.name !== "AbortError") {
@@ -34,7 +37,7 @@ const Display = (props) => {
   };
 
   useEffect(() => {
-    const url = `https://healthlogger-a9842-default-rtdb.firebaseio.com/users/${selection}.json`;
+    const url = `https://healthlogger-a9842-default-rtdb.firebaseio.com/users/.json`;
 
     const controller = new AbortController();
     fetchDisplay(url, controller.signal);
@@ -50,18 +53,26 @@ const Display = (props) => {
         <h2>Select Display Group:</h2>
         <div className="selection-container">
           <select id="selection" onChange={handleSelectionChange}>
-            <option value="conditions">conditions</option>
-            <option value="variables">variables</option>
+            <option value="2023-01-20">2023-01-20</option>
+            <option value="2023-01-21">2023-01-21</option>
           </select>
         </div>
       </section>
 
       <br />
-      
-      <div className="variable-container">
+      <section>
+        {!isLoading && display && (
+          <>
+            {display.conditions.eczema[selection].flare}
+            {display.variables.diet[selection]}
+            <div></div>
+          </>
+        )}
+      </section>
+      {/* <div className="variable-container">
         <div className="variable-title"></div>
         <ul className="variable-descriptions"></ul>
-      </div>
+      </div> */}
     </>
   );
 };
