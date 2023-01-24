@@ -1,6 +1,6 @@
 import React from "react";
 
-const VariableDisplay = (props) => {
+const Display = (props) => {
   const { diet, userID } = props.variable;
   console.log(diet);
   //   if (props.key === userID)
@@ -23,4 +23,4 @@ const VariableDisplay = (props) => {
   );
 };
 
-export default VariableDisplay;
+export default Display;

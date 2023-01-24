@@ -1,7 +1,5 @@
 import React from "react";
-// import Profile from "./components/Profile";
-// import SignIn from "./components/SignIn";
-// import VariableDisplay from "./components/VariableDisplay";
+import NavBar from "./components/NavBar";
 
 const fetchUsers = async () => {
   fetch("https://healthlogger-a9842-default-rtdb.firebaseio.com/.json")
@@ -41,12 +39,12 @@ function App() {
   // postUsers();
 
   return (
-    <div className="App">
-      {/* <header>
-        <button onClick={SignOut}>Sign Out</button>
-      </header> 
-      <section>{user ? <Profile /> : <SignIn />}</section> */}
-    </div>
+    <>
+      <NavBar />
+      {/* Routing between pages
+      <div className="App">
+      </div> */}
+    </>
   );
 }
 
