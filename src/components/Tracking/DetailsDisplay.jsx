@@ -26,15 +26,15 @@ const DetailsDisplay = (props) => {
         return (
           <div key={entryIndex} className={styles.dailyEntry}>
             {/* display date */}
-            <h2>{entry[0]}</h2>
+            <h2 className={styles.entryDate}>{entry[0]}</h2>
             {/* display for conditions/eczema */}
             <div className={styles.detailsDisplay}>
               <div className={styles.conditionsDisplay}>
-                <h3>Condition: Eczema</h3>
+                <h3 className={styles.entryTitle}>Condition: Eczema</h3>
                 <div className={styles.displayGroup}>
                   {Object.entries(entry[1]).map((item, index) => {
                     return (
-                      <ul key={index}>
+                      <ul key={index} className={styles.conditionsRow}>
                         <li className={styles.eczemaType}>{item[0]}:</li>
                         <li className={styles.eczemaItems}>{item[1]} / 10</li>
                       </ul>
@@ -45,7 +45,7 @@ const DetailsDisplay = (props) => {
 
               {/* display for variables/diet */}
               <div className={styles.variableDisplay}>
-                <h3>Variable: Diet</h3>
+                <h3 className={styles.entryTitle}>Variable: Diet</h3>
                 <div className={styles.displayGroup}>
                   {Object.entries(getDateEntry("diet")[entry[0]]).map(
                     (meal, mealIndex) => {
