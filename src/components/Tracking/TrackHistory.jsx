@@ -6,6 +6,11 @@ import styles from "./TrackHistory.module.css";
 
 const TrackHistory = (props) => {
   const [selection, setSelection] = useState("2023-01-20");
+  const [selectedDate, setSelectedDate] = useState({
+    year: "2023",
+    month: "01",
+  });
+
   const [display, setDisplay] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -37,6 +42,15 @@ const TrackHistory = (props) => {
 
   const handleSelectionChange = (event) => {
     setSelection(event.target.value);
+    if (event.target.id === "year") {
+      setSelectedDate((prevSelectedDate) => {
+        return [...prevSelectedDate, { year: event.target.value }];
+      });
+    } else if (event.target.id === "month") {
+      setSelectedDate((prevSelectedDate) => {
+        return [...prevSelectedDate, { month: event.target.value }];
+      });
+    }
   };
 
   const generateContent = () => {
@@ -69,6 +83,28 @@ const TrackHistory = (props) => {
             <option value="2023-01-20">2023-01-20</option>
             <option value="2023-01-21">2023-01-21</option>
           </select>
+          <select id="year" onChange={handleSelectionChange}>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+          </select>
+          <select id="month" onChange={handleSelectionChange}>
+            {[
+              "01",
+              "02",
+              "03",
+              "04",
+              "05",
+              "06",
+              "07",
+              "08",
+              "09",
+              "10",
+              "11",
+              "12",
+            ].map((month) => {
+              return <option value={month}>{month}</option>;
+            })}
+          </select>
         </div>
       </section>
 
@@ -77,6 +113,9 @@ const TrackHistory = (props) => {
         {/* Display date's contents if fetched success and loaded */}
         {!isLoading && display && (
           <DetailsDisplay
+            selectedDate={selectedDate}
+            eczema={display.conditions.eczema}
+            diet={display.variables.diet}
             conditions={display.conditions.eczema[selection]}
             variables={display.variables.diet[selection]}
           />

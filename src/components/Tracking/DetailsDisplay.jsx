@@ -2,8 +2,27 @@ import React from "react";
 import styles from "./TrackHistory.module.css";
 
 const DetailsDisplay = (props) => {
+  const getDateEntry = (dataType) => {
+    const checkMonth = Object.values(props.selectedDate).join("-");
+    const entriesToDisplay = {};
+
+    Object.keys(props[dataType]).map((date, index) => {
+      if (date.includes(checkMonth)) {
+        // entriesToDisplay.push(Object.values(props[dataType])[index]);
+        entriesToDisplay[Object.keys(props[dataType])[index]] = Object.values(
+          props[dataType]
+        )[index];
+      }
+    });
+
+    return entriesToDisplay;
+  };
+  console.log(getDateEntry("eczema"));
+  console.log(props.eczema);
+
   return (
     <div className={styles.detailDisplay}>
+      
       <div className={styles.conditionsDisplay}>
         <h3>Condition: Eczema</h3>
         <div className={styles.displayGroup}>
