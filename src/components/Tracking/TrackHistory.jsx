@@ -42,15 +42,9 @@ const TrackHistory = (props) => {
 
   const handleSelectionChange = (event) => {
     setSelection(event.target.value);
-    if (event.target.id === "year") {
-      setSelectedDate((prevSelectedDate) => {
-        return [...prevSelectedDate, { year: event.target.value }];
-      });
-    } else if (event.target.id === "month") {
-      setSelectedDate((prevSelectedDate) => {
-        return [...prevSelectedDate, { month: event.target.value }];
-      });
-    }
+    setSelectedDate((prevSelectedDate) => {
+      return { ...prevSelectedDate, [event.target.id]: event.target.value };
+    });
   };
 
   const generateContent = () => {
@@ -72,7 +66,7 @@ const TrackHistory = (props) => {
     return () => {
       controller.abort();
     };
-  }, [selection]);
+  }, [selection, selectedDate]);
 
   return (
     <div className={styles.TrackHistory}>
@@ -102,7 +96,11 @@ const TrackHistory = (props) => {
               "11",
               "12",
             ].map((month) => {
-              return <option value={month}>{month}</option>;
+              return (
+                <option key={month} value={month}>
+                  {month}
+                </option>
+              );
             })}
           </select>
         </div>

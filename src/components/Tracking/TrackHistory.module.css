@@ -25,7 +25,14 @@ select:hover {
 }
 
 /* Section: display */
-.detailDisplay {
+.dailyEntry {
+  padding: 20px;
+  border: solid 1px rgba(223, 230, 233, 1);
+  border-radius: 10px;
+  margin-bottom: 1em;
+}
+
+.detailsDisplay {
   display: flex;
   flex-direction: wrap;
   justify-content: space-around;
@@ -106,6 +113,10 @@ ul {
 }
 
 /* font styles */
+h3 {
+  margin-bottom: 20px;
+}
+
 .locationName {
   font-size: 18px;
   font-weight: 600;
