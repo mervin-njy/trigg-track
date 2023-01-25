@@ -68,7 +68,14 @@ const DetailsDisplay = (props) => {
                                   </li>
                                   {group.items.map((item, itemIndex) => {
                                     // item = each menu item of each meal
-                                    return <li key={itemIndex}>{item}</li>;
+                                    return (
+                                      <li
+                                        key={itemIndex}
+                                        className={styles.item}
+                                      >
+                                        {item}
+                                      </li>
+                                    );
                                   })}
                                 </ul>
                               );

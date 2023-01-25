@@ -5,7 +5,7 @@ import LoadingSpinner from "../Loading/LoadingSpinner";
 import styles from "./TrackHistory.module.css";
 
 const TrackHistory = (props) => {
-  const [selection, setSelection] = useState("2023-01-20");
+  // const [selection, setSelection] = useState("2023-01-20");
   const [selectedDate, setSelectedDate] = useState({
     year: "2023",
     month: "01",
@@ -41,19 +41,9 @@ const TrackHistory = (props) => {
   };
 
   const handleSelectionChange = (event) => {
-    setSelection(event.target.value);
+    // setSelection(event.target.value);
     setSelectedDate((prevSelectedDate) => {
       return { ...prevSelectedDate, [event.target.id]: event.target.value };
-    });
-  };
-
-  const generateContent = () => {
-    Object.entries(display.conditions.eczema[selection]).map((item, index) => {
-      return (
-        <li>
-          <span>{item[0]}:</span> {item[1]}
-        </li>
-      );
     });
   };
 
@@ -66,23 +56,21 @@ const TrackHistory = (props) => {
     return () => {
       controller.abort();
     };
-  }, [selection, selectedDate]);
+  }, [selectedDate]);
 
   return (
     <div className={styles.TrackHistory}>
       <section>
-        <h2>Select Display Group:</h2>
+        <h2>Select month to display:</h2>
         <div className={styles.selectionContainer}>
-          <select id="selection" onChange={handleSelectionChange}>
-            <option value="2023-01-20">2023-01-20</option>
-            <option value="2023-01-21">2023-01-21</option>
-          </select>
           <select id="year" onChange={handleSelectionChange}>
+            <option value="default">Select year.</option>
             <option value="2022">2022</option>
             <option value="2023">2023</option>
           </select>
           <select id="month" onChange={handleSelectionChange}>
             {[
+              "Select month.",
               "01",
               "02",
               "03",
@@ -114,8 +102,6 @@ const TrackHistory = (props) => {
             selectedDate={selectedDate}
             eczema={display.conditions.eczema}
             diet={display.variables.diet}
-            conditions={display.conditions.eczema[selection]}
-            variables={display.variables.diet[selection]}
           />
         )}
         {/* While fetching, display load spinner */}

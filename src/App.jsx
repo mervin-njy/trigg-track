@@ -1,5 +1,5 @@
 import React from "react";
-// import NavBar from "./components/NavBar";
+import NavBar from "./components/NavBar";
 import TrackHistory from "./components/Tracking/TrackHistory";
 
 // const postUsers = async () => {
@@ -22,6 +22,7 @@ function App() {
       {/* Routing between pages
       <div className="App">
       </div> */}
+      <NavBar />
       <TrackHistory />
     </>
   );

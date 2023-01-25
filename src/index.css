@@ -54,3 +54,11 @@ body {
   min-height: 100vh;
   background-color: rgb(40, 37, 53);
 }
+
+.navbar-links {
+  list-style: none;
+}
+
+::selection {
+  background-color: rgba(162, 155, 254, 0.8);
+}
