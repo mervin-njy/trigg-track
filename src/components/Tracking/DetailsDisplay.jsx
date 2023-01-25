@@ -21,23 +21,25 @@ const DetailsDisplay = (props) => {
         {Object.entries(props.variables).map((meal, mealIndex) => {
           // meal = breakfast, snackAM, lunch, snackPM, dinner, supper...
           return (
-            <ul key={mealIndex}>
-              <li className={styles.bolder}>{meal[0]}:</li>
-              {console.log(meal[0])}
-              {console.log(Object.values(Object.values(meal[1])))}
-              <div className="meal-items">
-                <ul>
-                  <li>{Object.keys(meal[1])}</li>
-                  {Object.values(Object.values(meal[1])).map(
-                    (item, itemIndex) => {
-                      <li key={itemIndex}>
-                        {Object.keys(item)}: {Object.values(item)}:
-                      </li>;
-                    }
-                  )}
-                </ul>
+            <div key={mealIndex} className={styles.entries}>
+              <div className={styles.mealType}>{meal[0]}:</div>
+              <div className={styles.mealItems}>
+                {Object.values(meal[1]).map((group, groupIndex) => {
+                  // group = location of each entry
+                  return (
+                    <ul key={groupIndex} className={styles.location}>
+                      <li className={styles.italic}>
+                        Location: {group.location}
+                      </li>
+                      {group.items.map((item, itemIndex) => {
+                        // item = each menu item of each meal
+                        return <li key={itemIndex}>{item}</li>;
+                      })}
+                    </ul>
+                  );
+                })}
               </div>
-            </ul>
+            </div>
           );
         })}
       </div>
