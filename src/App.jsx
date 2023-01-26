@@ -1,5 +1,7 @@
 import React from "react";
-import NavBar from "./components/NavBar";
+import { Route, Routes, Navigate } from "react-router-dom";
+import NavBar from "./components/NavBar/NavBar";
+import InputForm from "./Home/InputForm";
 import TrackHistory from "./components/Tracking/TrackHistory";
 
 // const postUsers = async () => {
@@ -23,7 +25,13 @@ function App() {
       <div className="App">
       </div> */}
       <NavBar />
-      <TrackHistory />
+      <Routes>
+        <Route path="/" element={<Navigate replace to="/home" />} />
+        <Route path="/home" element={<InputForm />} />
+        <Route path="/track" element={<TrackHistory />} />
+        {/* <Route path="/page-one/:item" element={<Details />} /> */}
+        {/* <Route path="/page-two" element={<PageTwo />} /> */}
+      </Routes>
     </>
   );
 }
