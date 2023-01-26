@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import Button from "../components/Interactions/Button";
 
 import styles from "./InputForm.module.css";
@@ -54,7 +55,9 @@ const InputForm = (props) => {
             </h3>
           </div>
           <div className={styles.answerButton}>
-            <Button displayName="let's go." onClick={handleClickToForm} />
+            <NavLink to="../track">
+              <Button displayName="let's go." />
+            </NavLink>
           </div>
         </section>
       </>
@@ -93,7 +96,9 @@ const InputForm = (props) => {
               </h3>
             </div>
             <div className={styles.answerButton}>
-              <Button displayName="let's go." onClick={handleClickToForm} />
+              <NavLink to="../track">
+                <Button displayName="let's go." />
+              </NavLink>
             </div>
           </section>
         </>
