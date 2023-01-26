@@ -56,7 +56,11 @@ const HomePage = (props) => {
                 </h3>
               </div>
               <div className={styles.answerButton}>
-                <Button displayName="yes." onClick={handleClickToForm} />
+                <Button
+                  buttonName="buttonRequest"
+                  displayName="yes."
+                  onClick={handleClickToForm}
+                />
               </div>
             </section>
           )}
@@ -74,7 +78,11 @@ const HomePage = (props) => {
             </div>
             <div className={styles.answerButton}>
               <NavLink to="../track">
-                <Button displayName="let's go." onClick={handleRedirect} />
+                <Button
+                  buttonName="buttonRequest"
+                  displayName="let's go."
+                  onClick={handleRedirect}
+                />
               </NavLink>
             </div>
           </section>
@@ -102,7 +110,11 @@ const HomePage = (props) => {
                 </h3>
               </div>
               <div className={styles.answerButton}>
-                <Button displayName="yes." onClick={handleClickToForm} />
+                <Button
+                  buttonName="buttonUrgent"
+                  displayName="yes."
+                  onClick={handleClickToForm}
+                />
               </div>
             </section>
           )}
@@ -120,7 +132,11 @@ const HomePage = (props) => {
             </div>
             <div className={styles.answerButton}>
               <NavLink to="../track">
-                <Button displayName="let's go." onClick={handleRedirect} />
+                <Button
+                  buttonName="buttonRequest"
+                  displayName="let's go."
+                  onClick={handleRedirect}
+                />
               </NavLink>
             </div>
           </section>

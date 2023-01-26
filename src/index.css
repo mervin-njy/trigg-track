@@ -38,28 +38,34 @@ select:hover {
   color: rgba(223, 230, 233, 1);
 }
 
-.button {
+button {
   font-size: 1.6rem;
   font-weight: 500;
 
   line-height: 0.2rem;
-  background-color: #dfe6e9;
-  color: #1d1e1e;
+  background-color: #474368;
+  color: #a29bfe;
 
   width: auto;
   height: 3rem;
   vertical-align: middle;
 
   padding: 0.2rem 2rem;
-  border: solid 0.18rem;
+  border: solid 0.12rem;
   border-radius: 0.6rem;
-  animation: glowing 1.5s infinite;
 }
 
-.button:hover {
-  background-color: #1d1e1e;
-  color: rgba(162, 155, 254, 0.8);
-  animation: glowing 0.6s infinite;
+button:hover {
+  background-color: #a29bfe;
+  color: #474368;
+}
+
+.buttonUrgent {
+  animation: glowing 1.4s infinite;
+}
+
+.buttonUrgent:hover {
+  animation: glowing 0.7s infinite;
 }
 
 @keyframes glowing {

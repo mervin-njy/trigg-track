@@ -7,16 +7,6 @@ import TrackHistory from "./components/Tracking/TrackHistory";
 // import custom hooks
 import useFetch from "./Hooks/useFetch";
 
-// const postUsers = async () => {
-//   fetch("https://healthlogger-a9842-default-rtdb.firebaseio.com/.json"),
-//     {
-//       method: "POST",
-//       body: JSON.stringify({
-//         user: { conditions: { eczema: 6 } },
-//       }),
-//     };
-// };
-
 function App() {
   const [display, isLoading, error, fetchDisplay] = useFetch();
 
@@ -51,7 +41,7 @@ function App() {
             />
           }
         />
-        {/* <Route path="/triggers/:item" element={<TriggerDisplay />} /> */}
+        {/* <Route path="/triggers" element={<TriggerDisplay />} /> */}
         {/* <Route path="/about" element={<About />} /> */}
       </Routes>
     </>
