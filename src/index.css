@@ -22,6 +22,22 @@ body {
   align-items: center;
 }
 
+/* INTERACTION COMPONENTS */
+select {
+  /* background-color: ; */
+  font-weight: 500;
+  width: 12%;
+
+  padding: 0.4rem;
+  border-radius: 0.6rem;
+  margin-right: 1rem;
+}
+
+select:hover {
+  background-color: rgba(29, 30, 30, 1);
+  color: rgba(223, 230, 233, 1);
+}
+
 .button {
   font-size: 1.6rem;
   font-weight: 500;

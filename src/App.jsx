@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 // import components
 import NavBar from "./components/NavBar/NavBar";
-import HomePage from "./Home/HomePage";
+import HomePage from "./components/Home/HomePage";
 import TrackHistory from "./components/Tracking/TrackHistory";
 // import custom hooks
 import useFetch from "./Hooks/useFetch";

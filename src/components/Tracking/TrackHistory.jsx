@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import DetailsDisplay from "./DetailsDisplay";
 import LoadingSpinner from "../Loading/LoadingSpinner";
+import Select from "../Interactions/Select";
 // import useFetch from "../../Hooks/useFetch";
 
 import styles from "./TrackHistory.module.css";
@@ -37,13 +38,15 @@ const TrackHistory = (props) => {
       <section>
         <h2>Select month to display:</h2>
         <div className={styles.selectionContainer}>
-          <select id="year" onChange={handleSelectionChange}>
-            <option value="default">Select year.</option>
-            <option value="2022">2022</option>
-            <option value="2023">2023</option>
-          </select>
-          <select id="month" onChange={handleSelectionChange}>
-            {[
+          <Select
+            id="year"
+            onChange={handleSelectionChange}
+            optionValues={["Select year.", "2022", "2023"]}
+          />
+          <Select
+            id="month"
+            onChange={handleSelectionChange}
+            optionValues={[
               "Select month.",
               "01",
               "02",
@@ -57,14 +60,8 @@ const TrackHistory = (props) => {
               "10",
               "11",
               "12",
-            ].map((month) => {
-              return (
-                <option key={month} value={month}>
-                  {month}
-                </option>
-              );
-            })}
-          </select>
+            ]}
+          />
         </div>
       </section>
 
