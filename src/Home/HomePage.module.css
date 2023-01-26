@@ -69,3 +69,15 @@
   letter-spacing: 0.1rem;
   color: #79d6b1;
 }
+
+@keyframes disappear {
+  0% {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 60%;
+  }
+  100% {
+    opacity: 0%;
+  }
+}
