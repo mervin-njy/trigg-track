@@ -1,38 +1,39 @@
 .TrackHistory {
-  font-size: 12px;
-  letter-spacing: 1px;
+  font-size: 1rem;
+  font-weight: 100;
+  letter-spacing: 0.08rem;
   width: 80%;
 
-  padding: 10em 0;
+  padding: 10rem 0;
   margin: 0 auto;
 }
 
 /* Section: selection panel */
 .selectionContainer {
-  margin: 2em auto;
+  margin: 2rem auto;
 }
 
 select {
   /* background-color: ; */
   font-weight: 500;
-  width: 180px;
+  width: 12%;
 
-  padding: 5px;
-  border-radius: 8px;
-  margin-right: 10px;
+  padding: 0.4rem;
+  border-radius: 0.6rem;
+  margin-right: 1rem;
 }
 
 select:hover {
-  background-color: rgba(45, 52, 54, 1);
+  background-color: rgba(29, 30, 30, 1);
   color: rgba(223, 230, 233, 1);
 }
 
 /* Section: display */
 .dailyEntry {
-  padding: 20px;
-  border: solid 1px rgba(223, 230, 233, 0.5);
-  border-radius: 5px;
-  margin-bottom: 1em;
+  padding: 2rem;
+  border: solid 0.1rem rgba(223, 230, 233, 0.5);
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
 }
 
 .detailsDisplay {
@@ -43,34 +44,48 @@ select:hover {
 }
 
 .displayGroup {
-  width: 99%;
-  float: left;
+  width: 98%;
+  margin: 0 auto;
+  /* float: left; */
 }
 
 /* Left: conditions */
+.conditionsBorder {
+  z-index: 99;
+  width: 25rem;
+  height: 100%;
+  background-color: rgba(29, 30, 30, 1);
+}
+
 .conditionsDisplay {
   width: 25%;
   /* margin: 2em; */
 }
 
+/* .conditionsRow {
+  justify-content: left;
+} */
+
+.conditionsRow:nth-child(odd) {
+  background-color: rgba(99, 110, 114, 0.2);
+  border-radius: 0.4rem;
+}
+
 .eczemaType {
-  font-size: 18px;
-  font-weight: 700;
-  width: 50%;
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  width: 60%;
 }
 
 .eczemaItems {
   list-style: none;
-  font-size: 15px;
-  width: 50%;
+  font-size: 1.4rem;
+  font-weight: 100;
+  width: 40%;
   margin: 0 auto;
   justify-content: left;
   /* vertical-align: middle; */
-}
-
-.conditionsRow:nth-child(odd) {
-  background-color: rgba(99, 110, 114, 0.2);
-  border-radius: 5px;
 }
 
 /* right: variables */
@@ -84,18 +99,19 @@ select:hover {
   display: flex;
   flex-direction: wrap;
 
-  padding: 1em;
+  padding: 0.2rem;
   border: solid 2px rgba(223, 230, 233, 0.3);
-  border-radius: 10px;
-  margin-bottom: 1em;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
 }
 
 .mealType {
-  font-weight: 700;
-  font-size: 18px;
-  width: 15%;
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.15rem;
+  width: 12%;
 
-  margin: 10px 15px;
+  margin: 2rem 1.2rem;
 }
 
 .location {
@@ -103,10 +119,10 @@ select:hover {
   text-align: left;
   width: 96%;
 
-  padding: 4px 0 15px 30px;
+  padding: 0.7rem 0 1.5rem 2.5rem;
   border: solid 0.5px rgba(223, 230, 233, 1);
   border-radius: 5px;
-  margin: 10px auto;
+  margin: 1rem auto;
 }
 
 .mealItems {
@@ -125,32 +141,34 @@ ul {
 /* font styles */
 .entryDate {
   width: 97%;
-  margin: 15px auto;
-  font-weight: 100;
-  letter-spacing: 5px;
+  margin: 0.5rem auto;
+  font-size: 2.5rem;
+  font-weight: 500;
+  letter-spacing: 0.4rem;
 }
 
 .entryTitle {
   /* background-color: rgba(223, 230, 233, 0.5); */
-  font-size: 25px;
+  font-size: 1.8rem;
   font-weight: 300;
-  letter-spacing: 2px;
+  letter-spacing: 0.2rem;
 
-  padding: 10px 0;
-  border-radius: 8px;
-  margin: 20x auto;
+  padding: 1rem 0;
+  border-bottom: solid 0.2rem rgba(255, 255, 255, 1);
+  margin: 2rem auto;
 }
 
 li {
-  padding: 8px;
+  padding: 0.4rem;
 }
 
 .locationName {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
   font-style: italic;
   list-style: none;
-  padding: 3px 0;
+  margin-bottom: 0.5rem;
 }
 
 .item {
@@ -160,5 +178,12 @@ li {
 .item:nth-child(even) {
   background: rgba(99, 110, 114, 0.2);
   color: rgba(255, 255, 255, 1);
-  border-radius: 5px;
+  border-radius: 0.4rem;
+}
+
+.conditionsRow:hover,
+.item:hover {
+  background-color: #a29bfe;
+  color: #282535;
+  font-weight: 500;
 }

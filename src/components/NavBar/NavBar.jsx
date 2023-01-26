@@ -47,7 +47,11 @@ const NavBar = () => {
         </ul>
       </nav>
       <div className={styles.profileSpace}>
-        <img className={styles.profilePic} src="https://i.imgur.com/nxNDmRF.jpg" alt="profile-pic" />
+        <img
+          className={styles.profilePic}
+          src="https://i.imgur.com/nxNDmRF.jpg"
+          alt="profile-pic"
+        />
         <h4 className={styles.profileOption}>sign out</h4>
       </div>
       {/* <Profile /> */}

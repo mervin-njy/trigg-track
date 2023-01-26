@@ -11,6 +11,8 @@
   min-height: 4rem;
   width: 100%;
 
+  font-size: 1.5rem;
+
   /* padding: 0px;
   margin: 0 auto; */
   box-sizing: border-box;
@@ -49,9 +51,19 @@ nav {
   text-decoration: none;
 }
 
-.navBar a:hover,
 .navBar a:active,
 .navBar a.active {
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.08rem;
+  color: whitesmoke;
+  padding-bottom: 0.15rem;
+  border-bottom: 0.15rem solid whitesmoke;
+}
+
+.navBar a:hover {
+  font-weight: 800;
+  letter-spacing: 0.12rem;
   color: whitesmoke;
   padding-bottom: 0.2rem;
   border-bottom: 0.2rem solid whitesmoke;
@@ -78,7 +90,8 @@ nav {
 }
 
 .profileOption {
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 300;
+  letter-spacing: 0.1rem;
   margin: auto 0;
 }

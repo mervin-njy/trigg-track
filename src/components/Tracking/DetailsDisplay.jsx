@@ -25,6 +25,7 @@ const DetailsDisplay = (props) => {
         // entry = [ date, {cuts: _ , itch: _ , ...} ]
         return (
           <div key={entryIndex} className={styles.dailyEntry}>
+            <div className={styles.conditionsBorder}></div>
             {/* display date */}
             <h2 className={styles.entryDate}>{entry[0]}</h2>
             {/* display for conditions/eczema */}
