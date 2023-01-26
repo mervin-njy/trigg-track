@@ -29,7 +29,17 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Navigate replace to="/home" />} />
-        <Route path="/home" element={<InputForm />} />
+        <Route
+          path="/home"
+          element={
+            <InputForm
+              display={display}
+              isLoading={isLoading}
+              error={error}
+              fetchDisplay={handleDateSelection}
+            />
+          }
+        />
         <Route
           path="/track"
           element={

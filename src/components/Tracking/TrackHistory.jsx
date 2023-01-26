@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import DetailsDisplay from "./DetailsDisplay";
 import LoadingSpinner from "../Loading/LoadingSpinner";
+// import useFetch from "../../Hooks/useFetch";
 
 import styles from "./TrackHistory.module.css";
 
@@ -10,6 +11,8 @@ const TrackHistory = (props) => {
     year: "2023",
     month: "01",
   });
+
+  // const [display, isLoading, error, fetchDisplay] = useFetch();
 
   const handleSelectionChange = (event) => {
     // setSelection(event.target.value);
