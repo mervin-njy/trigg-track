@@ -19,7 +19,7 @@
   flex-direction: wrap;
   justify-content: space-between;
 
-  margin: 3rem 3rem;
+  margin: 4rem 3rem;
 }
 
 /* LEFT - questions */
@@ -97,6 +97,7 @@
 }
 
 .conditionInputs {
+  font-weight: 500;
   width: 45%;
   text-align: right;
   float: right;
@@ -110,4 +111,60 @@
   font-weight: 100;
   width: 10%;
   margin: auto 0;
+}
+
+/* conditions form */
+.variableRow {
+  display: flex;
+  flex-direction: wrap;
+  justify-content: flex-start;
+  margin: 0.5rem 0;
+}
+
+.variableRow:nth-child(odd) {
+  background-color: rgba(99, 110, 114, 0.2);
+  border-radius: 0.4rem;
+}
+
+.mealType {
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  width: 35%;
+  padding: 0.5rem 3rem;
+}
+
+.mealItems {
+  list-style: none;
+  font-size: 1.4rem;
+  font-weight: 100;
+  width: 58%;
+
+  margin: auto 0;
+}
+
+.mealInputs {
+  font-weight: 500;
+  width: 100%;
+  text-align: right;
+  float: right;
+  padding: 0.1rem 0.8rem;
+  border-radius: 0.4rem;
+  margin: 0 1rem;
+}
+
+.addButton {
+  padding: 1rem;
+  width: 5%;
+  margin: auto 0;
+}
+
+.formSection,
+.submitButton {
+  width: 93%;
+  margin: 0 auto;
+}
+
+.submitButton {
+  margin-bottom: 5rem;
 }

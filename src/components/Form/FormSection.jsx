@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Button from "../Interactions/Button";
 import Input from "../Interactions/Input";
 
 import styles from "./InputForm.module.css";
@@ -9,29 +10,72 @@ const FormSection = (props) => {
   //////////////////
   // initial states
   //////////////////
-  const initialConditions = {};
+  const initialValues = {};
   props.questions.map((qn) => {
-    return (initialConditions[qn] = "");
+    return (initialValues[qn] = "");
   });
+
+  //   const initialConditions = {};
+  //   props.questions.map((qn) => {
+  //     return (initialConditions[qn] = "");
+  //   });
+
+  //   const initialVariables = {};
+  //   props.questions.map((qn) => {
+  //     return (initialVariables[qn] = "");
+  //   });
 
   //////////
   // STATES
   //////////
-  const [conditionValues, setConditionValues] = useState(initialConditions);
+  const [values, setValues] = useState(initialValues);
+  //   const [conditionValues, setConditionValues] = useState(initialConditions);
+  //   const [variableValues, setVariableValues] = useState(initialVariables);
 
   ////////////
   // handlers
   ////////////
-  const handleConditionsChange = (event) => {
+  const handleChange = (event) => {
     event.preventDefault();
-    setConditionValues((prevConditionValues) => {
+    setValues((prevValues) => {
       return {
-        ...prevConditionValues,
+        ...prevValues,
         [event.target.name]: event.target.value,
       };
     });
   };
 
+  //   const handleConditionsChange = (event) => {
+  //     event.preventDefault();
+  //     setConditionValues((prevConditionValues) => {
+  //       return {
+  //         ...prevConditionValues,
+  //         [event.target.name]: event.target.value,
+  //       };
+  //     });
+  //   };
+
+  //   const handleVariableChange = (event) => {
+  //     event.preventDefault();
+  //     setVariableValues((prevVariableValues) => {
+  //       return {
+  //         ...prevVariableValues,
+  //         [event.target.name]: event.target.value,
+  //       };
+  //     });
+  //   };
+
+  const handleAddRow = () => {};
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(values);
+    // lift state via props.function()
+  };
+
+  /////////////////
+  // main function
+  /////////////////
   const displayForm = () => {
     if (props.type === "conditions") {
       return (
@@ -43,9 +87,12 @@ const FormSection = (props) => {
                 <div className={styles.eczemaItems}>
                   <Input
                     className={styles.conditionInputs}
+                    type="number"
                     name={item}
-                    value={conditionValues[item]}
-                    onValueChange={handleConditionsChange}
+                    // value={conditionValues[item]}
+                    value={values[item]}
+                    // onValueChange={handleConditionsChange}
+                    onValueChange={handleChange}
                   />
                 </div>
                 <h2 className={styles.conditionScore}>/ 10</h2>
@@ -55,10 +102,49 @@ const FormSection = (props) => {
         </div>
       );
     } else {
+      return (
+        <div className={styles.formSection}>
+          {props.questions.map((item, index) => {
+            return (
+              <div key={index} className={styles.variableRow}>
+                <div className={styles.mealType}>{item}:</div>
+                <div className={styles.mealItems}>
+                  <Input
+                    className={styles.mealInputs}
+                    type="text"
+                    name={item}
+                    // value={variableValues[item]}
+                    value={values[item]}
+                    // onValueChange={handleVariableChange}
+                    onValueChange={handleChange}
+                  />
+                </div>
+                <Button
+                  buttonName={styles.addButton}
+                  displayName="+"
+                  onClick={handleAddRow}
+                />
+              </div>
+            );
+          })}
+        </div>
+      );
     }
   };
 
-  return <>{displayForm()}</>;
+  return (
+    <>
+      {displayForm()}
+      <br />
+      <div className={styles.submitButton}>
+        <Button
+          buttonName="buttonUrgent"
+          displayName="submit."
+          onClick={handleSubmit}
+        />
+      </div>
+    </>
+  );
 };
 
 export default FormSection;

@@ -58,7 +58,6 @@ const InputForm = (props) => {
 
   const showForm = (dataType, type) => {
     console.log("showing form");
-    console.log(newDate);
     return <FormSection type={type} questions={Object.keys(dataType)} />;
   };
 
@@ -135,9 +134,9 @@ const InputForm = (props) => {
             onClick={handleShowConditions}
           />
         )}
-        {displayConditions &&
-          showForm(props.data.conditions.eczema["2023-01-20"], "conditions")}
       </section>
+      {displayConditions &&
+        showForm(props.data.conditions.eczema["2023-01-20"], "conditions")}
 
       <div className={styles.mainBox}>
         <h2 className={styles.mainQuestion}>
@@ -160,16 +159,9 @@ const InputForm = (props) => {
             onClick={handleShowVariables}
           />
         )}
-        {displayVariables &&
-          showForm(props.data.variables.diet["2023-01-20"], "variables")}
       </section>
-      <section className={styles.displayBox}>
-        <Button
-          buttonName="buttonRequest"
-          displayName="submit."
-          onClick={handleSubmit}
-        />
-      </section>
+      {displayVariables &&
+        showForm(props.data.variables.diet["2023-01-20"], "variables")}
     </div>
   );
 };
