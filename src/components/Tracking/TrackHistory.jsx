@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import DetailsDisplay from "./DetailsDisplay";
 import LoadingSpinner from "../Loading/LoadingSpinner";
-import useFetch from "../../Hooks/useFetch";
 
 import styles from "./TrackHistory.module.css";
 
@@ -11,8 +10,6 @@ const TrackHistory = (props) => {
     year: "2023",
     month: "01",
   });
-
-  const [display, isLoading, error, fetchDisplay] = useFetch();
 
   const handleSelectionChange = (event) => {
     // setSelection(event.target.value);
@@ -25,7 +22,7 @@ const TrackHistory = (props) => {
     const url = `https://healthlogger-a9842-default-rtdb.firebaseio.com/users/.json`;
 
     const controller = new AbortController();
-    fetchDisplay(url, controller.signal);
+    props.fetchDisplay(url, controller.signal);
 
     return () => {
       controller.abort();
@@ -71,21 +68,21 @@ const TrackHistory = (props) => {
       <br />
       <section>
         {/* Display date's contents if fetched success and loaded */}
-        {!isLoading && display && (
+        {!props.isLoading && props.display && (
           <DetailsDisplay
             selectedDate={selectedDate}
-            eczema={display.conditions.eczema}
-            diet={display.variables.diet}
+            eczema={props.display.conditions.eczema}
+            diet={props.display.variables.diet}
           />
         )}
         {/* While fetching, display load spinner */}
-        {isLoading && (
+        {props.isLoading && (
           <div className="centered">
             <LoadingSpinner />
           </div>
         )}
         {/* Display error message if fetch has an error */}
-        {!isLoading && error && <p> {error}</p>}
+        {!props.isLoading && props.error && <p> {props.error}</p>}
       </section>
     </div>
   );
