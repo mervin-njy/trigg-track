@@ -5,6 +5,8 @@ const Input = (props) => {
     <>
       <input
         className={props.className}
+        type="number"
+        name={props.name}
         value={props.value}
         onChange={(event) => props.onValueChange(event)}
       ></input>

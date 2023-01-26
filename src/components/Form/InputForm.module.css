@@ -70,7 +70,7 @@
 .conditionsRow {
   display: flex;
   flex-direction: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   margin: 0.5rem 0;
 }
 
@@ -83,7 +83,7 @@
   font-size: 1.8rem;
   font-weight: 500;
   letter-spacing: 0.2rem;
-  width: 60%;
+  width: 35%;
   padding: 0.5rem 3rem;
 }
 
@@ -91,12 +91,23 @@
   list-style: none;
   font-size: 1.4rem;
   font-weight: 100;
-  width: 40%;
+  width: 35%;
+
   margin: auto 0;
-  justify-content: left;
 }
 
 .conditionInputs {
-  width: 80%;
+  width: 45%;
+  text-align: right;
+  float: right;
+  padding: 0.1rem 0.2rem;
   border-radius: 0.4rem;
+  margin: 0 1rem;
+}
+
+.conditionScore {
+  font-size: 1.5rem;
+  font-weight: 100;
+  width: 10%;
+  margin: auto 0;
 }

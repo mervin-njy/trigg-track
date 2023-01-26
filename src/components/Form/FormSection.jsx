@@ -22,23 +22,33 @@ const FormSection = (props) => {
   ////////////
   // handlers
   ////////////
-  const handleValueChange = () => {};
+  const handleConditionsChange = (event) => {
+    event.preventDefault();
+    setConditionValues((prevConditionValues) => {
+      return {
+        ...prevConditionValues,
+        [event.target.name]: event.target.value,
+      };
+    });
+  };
 
   const displayForm = () => {
     if (props.type === "conditions") {
       return (
         <div className={styles.formSection}>
-          {props.questions.map((item) => {
+          {props.questions.map((item, index) => {
             return (
-              <div className={styles.conditionsRow}>
+              <div key={index} className={styles.conditionsRow}>
                 <div className={styles.eczemaType}>{item}:</div>
                 <div className={styles.eczemaItems}>
                   <Input
                     className={styles.conditionInputs}
-                    value={initialConditions[item]}
-                    onValueChange={handleValueChange}
+                    name={item}
+                    value={conditionValues[item]}
+                    onValueChange={handleConditionsChange}
                   />
                 </div>
+                <h2 className={styles.conditionScore}>/ 10</h2>
               </div>
             );
           })}
