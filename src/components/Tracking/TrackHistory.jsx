@@ -4,6 +4,7 @@ import LoadingSpinner from "../Loading/LoadingSpinner";
 import Select from "../Interactions/Select";
 // import useFetch from "../../Hooks/useFetch";
 
+import date from "../../dateArrays";
 import styles from "./TrackHistory.module.css";
 
 const TrackHistory = (props) => {
@@ -42,27 +43,13 @@ const TrackHistory = (props) => {
             id="year"
             className={styles.displaySelect}
             onChange={handleSelectionChange}
-            optionValues={["Select year.", "2022", "2023"]}
+            optionValues={date.years}
           />
           <Select
             id="month"
             className={styles.displaySelect}
             onChange={handleSelectionChange}
-            optionValues={[
-              "Select month.",
-              "01",
-              "02",
-              "03",
-              "04",
-              "05",
-              "06",
-              "07",
-              "08",
-              "09",
-              "10",
-              "11",
-              "12",
-            ]}
+            optionValues={date.months}
           />
         </div>
       </section>

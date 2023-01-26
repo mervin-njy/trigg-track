@@ -49,12 +49,7 @@
 
 .conditionsDisplay {
   width: 25%;
-  /* margin: 2em; */
 }
-
-/* .conditionsRow {
-  justify-content: left;
-} */
 
 .conditionsRow:nth-child(odd) {
   background-color: rgba(99, 110, 114, 0.2);
@@ -75,7 +70,6 @@
   width: 40%;
   margin: 0 auto;
   justify-content: left;
-  /* vertical-align: middle; */
 }
 
 /* right: variables */

@@ -13,50 +13,106 @@ const InputForm = (props) => {
   //////////
   const [displayConditions, setDisplayConditions] = useState(false);
   const [displayVariables, setDisplayVariables] = useState(false);
+  const [displayDate, setDisplayDate] = useState(false);
+  const [newDate, setNewDate] = useState({ year: "", month: "", day: "" });
 
   ////////////
   // handlers
   ////////////
-  const handleSelectionChange = () => console.log("selection changed.");
+  const handleSelectionChange = (event) => {
+    setNewDate((prevNewDate) => {
+      return { ...prevNewDate, [event.target.id]: event.target.value };
+    });
+  };
+
+  const handleDateSelection = (event) => {
+    if (event.target.id === "select today") {
+      const currDate = new Date().toISOString().split("T")[0];
+      setNewDate(currDate);
+    } else {
+      let proceed = true;
+      Object.values(newDate).map((item) => {
+        if (
+          item === "" ||
+          item === "Select year." ||
+          item === "Select month." ||
+          item === "Select day."
+        )
+          proceed = false;
+      });
+      console.log(`New Date can be added: ${proceed}`);
+      if (proceed) {
+        setNewDate((prevNewDate) => {
+          return `${prevNewDate.year}-${prevNewDate.month}-${prevNewDate.day}`;
+        });
+      } else {
+        alert("please select all date dropdown menus");
+      }
+    }
+    setDisplayDate(true);
+  };
 
   const handleShowConditions = () => setDisplayConditions(true);
 
   const handleShowVariables = () => setDisplayVariables(true);
 
-  const showForm = (dataType) => {
+  const showForm = (dataType, type) => {
     console.log("showing form");
-    return <FormSection questions={Object.keys(dataType)} />;
+    console.log(newDate);
+    return <FormSection type={type} questions={Object.keys(dataType)} />;
   };
 
   const handleSubmit = () => {};
 
   return (
     <div className={styles.InputForm}>
-      <div className={styles.mainBox}>
-        <h2 className={styles.mainQuestion}>
-          Please select the date to input:
-        </h2>
-      </div>
-      <section className={styles.displayBox}>
-        <Select
-          id="year"
-          className={styles.dateSelect}
-          onChange={handleSelectionChange}
-          optionValues={date.years}
-        />
-        <Select
-          id="month"
-          className={styles.dateSelect}
-          onChange={handleSelectionChange}
-          optionValues={date.months}
-        />
-        <Select
-          id="day"
-          className={styles.dateSelect}
-          onChange={handleSelectionChange}
-          optionValues={date.days}
-        />
-      </section>
+      {displayDate ? (
+        <div className={styles.mainBox}>
+          <h2 className={styles.newDescription}>{newDate}</h2>
+        </div>
+      ) : (
+        <div className={styles.mainBox}>
+          <h2 className={styles.mainQuestion}>
+            Please select the date to input:
+          </h2>
+        </div>
+      )}
+      {!displayDate && (
+        <section className={styles.displayBox}>
+          <div className={styles.dateSelection}>
+            <Select
+              id="year"
+              className={styles.dateSelect}
+              onChange={handleSelectionChange}
+              optionValues={date.years}
+            />
+            <Select
+              id="month"
+              className={styles.dateSelect}
+              onChange={handleSelectionChange}
+              optionValues={date.months}
+            />
+            <Select
+              id="day"
+              className={styles.dateSelect}
+              onChange={handleSelectionChange}
+              optionValues={date.days}
+            />
+          </div>
+          <div className={styles.dateSelectButtons}>
+            <Button
+              buttonName="buttonRequest"
+              displayName="add date"
+              onClick={handleDateSelection}
+            />
+            <Button
+              buttonName="buttonUrgent"
+              displayName="select today"
+              onClick={handleDateSelection}
+            />
+          </div>
+        </section>
+      )}
 
       <div className={styles.mainBox}>
         <h2 className={styles.mainQuestion}>
@@ -79,7 +135,8 @@ const InputForm = (props) => {
             onClick={handleShowConditions}
           />
         )}
-        {displayConditions && showForm(props.data.conditions.eczema)}
+        {displayConditions &&
+          showForm(props.data.conditions.eczema["2023-01-20"], "conditions")}
       </section>
 
       <div className={styles.mainBox}>
@@ -103,7 +160,8 @@ const InputForm = (props) => {
             onClick={handleShowVariables}
           />
         )}
-        {displayVariables && showForm(props.data.variables.diet)}
+        {displayVariables &&
+          showForm(props.data.variables.diet["2023-01-20"], "variables")}
       </section>
       <section className={styles.displayBox}>
         <Button

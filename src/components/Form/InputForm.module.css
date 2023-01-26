@@ -19,11 +19,19 @@
   flex-direction: wrap;
   justify-content: space-between;
 
-  margin: 1rem 3rem;
+  margin: 3rem 3rem;
 }
 
 /* LEFT - questions */
 .mainQuestion {
+  width: 80%;
+  padding: 0 3rem;
+}
+
+.newDescription {
+  font-size: 2.5rem;
+  font-weight: 500;
+  letter-spacing: 0.4rem;
   width: 80%;
   padding: 0 3rem;
 }
@@ -34,5 +42,61 @@
 }
 
 .formSelect {
+  width: 80%;
+}
+
+/* Horizontal containers */
+/* Date selection */
+.dateSelection {
+  width: 50%;
+}
+
+.dateSelect {
+  width: 30%;
+}
+
+.dateSelectButtons {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* formSection container */
+.formSection {
+  width: 100%;
+}
+
+/* conditions form */
+.conditionsRow {
+  display: flex;
+  flex-direction: wrap;
+  justify-content: center;
+  margin: 0.5rem 0;
+}
+
+.conditionsRow:nth-child(odd) {
+  background-color: rgba(99, 110, 114, 0.2);
+  border-radius: 0.4rem;
+}
+
+.eczemaType {
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
   width: 60%;
+  padding: 0.5rem 3rem;
+}
+
+.eczemaItems {
+  list-style: none;
+  font-size: 1.4rem;
+  font-weight: 100;
+  width: 40%;
+  margin: auto 0;
+  justify-content: left;
+}
+
+.conditionInputs {
+  width: 80%;
+  border-radius: 0.4rem;
 }

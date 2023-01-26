@@ -1,11 +1,15 @@
-import React from 'react';
+import React from "react";
 
-const Input = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+const Input = (props) => {
+  return (
+    <>
+      <input
+        className={props.className}
+        value={props.value}
+        onChange={(event) => props.onValueChange(event)}
+      ></input>
+    </>
+  );
 };
 
 export default Input;
