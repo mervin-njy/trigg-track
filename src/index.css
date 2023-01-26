@@ -22,6 +22,48 @@ body {
   align-items: center;
 }
 
+.button {
+  font-size: 1.6rem;
+  font-weight: 500;
+
+  line-height: 0.2rem;
+  background-color: #dfe6e9;
+  color: #1d1e1e;
+
+  width: auto;
+  height: 3rem;
+  vertical-align: middle;
+
+  padding: 0.2rem 2rem;
+  border: solid 0.18rem;
+  border-radius: 0.6rem;
+  animation: glowing 1.5s infinite;
+}
+
+.button:hover {
+  background-color: #1d1e1e;
+  color: rgba(162, 155, 254, 0.8);
+  animation: glowing 0.6s infinite;
+}
+
+@keyframes glowing {
+  0% {
+    background-color: #474368;
+    box-shadow: 0 0 0 #474368;
+    color: #a29bfe;
+  }
+  50% {
+    background-color: #a29bfe;
+    box-shadow: 0 0 1.2rem #a29bfe;
+    color: #474368;
+  }
+  100% {
+    background-color: #474368;
+    box-shadow: 0 0 0.5rem #474368;
+    color: #a29bfe;
+  }
+}
+
 ::selection {
   background-color: rgba(162, 155, 254, 0.8);
 }

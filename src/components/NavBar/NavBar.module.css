@@ -54,7 +54,7 @@ nav {
 .navBar a:active,
 .navBar a.active {
   font-size: 1.6rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.08rem;
   color: whitesmoke;
   padding-bottom: 0.15rem;
@@ -62,8 +62,8 @@ nav {
 }
 
 .navBar a:hover {
-  font-weight: 800;
-  letter-spacing: 0.12rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
   color: whitesmoke;
   padding-bottom: 0.2rem;
   border-bottom: 0.2rem solid whitesmoke;

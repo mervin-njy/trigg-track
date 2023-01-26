@@ -18,6 +18,27 @@
   margin: 1rem 2rem;
 }
 
+/* container for QnA box */
+.introBox {
+  display: flex;
+  flex-direction: wrap;
+  justify-content: space-between;
+
+  margin-bottom: 2rem;
+}
+
+/* container for questions */
+.question {
+  width: 80%;
+}
+
+/* container for answers */
+.answerButton {
+  width: 20%;
+  margin: auto 0;
+}
+
+/* text styles */
 .title {
   font-size: 3.5rem;
   font-weight: 300;
@@ -29,4 +50,22 @@
   font-weight: 200;
   letter-spacing: 0.2rem;
   margin: 1rem 0;
+}
+
+.negative {
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  color: #eb9494;
+}
+
+.neutral {
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  color: #a29bfe;
+}
+
+.positive {
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  color: #79d6b1;
 }
