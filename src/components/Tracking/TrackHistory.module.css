@@ -10,7 +10,12 @@
 
 /* Section: selection panel */
 .selectionContainer {
-  margin: 2rem auto;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.displaySelect {
+  width: 13%;
 }
 
 /* Section: display */

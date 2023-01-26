@@ -40,11 +40,13 @@ const TrackHistory = (props) => {
         <div className={styles.selectionContainer}>
           <Select
             id="year"
+            className={styles.displaySelect}
             onChange={handleSelectionChange}
             optionValues={["Select year.", "2022", "2023"]}
           />
           <Select
             id="month"
+            className={styles.displaySelect}
             onChange={handleSelectionChange}
             optionValues={[
               "Select month.",

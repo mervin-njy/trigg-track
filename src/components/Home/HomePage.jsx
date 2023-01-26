@@ -33,8 +33,9 @@ const HomePage = (props) => {
   /////////////////
   // display types
   /////////////////
-  const displayForm = () => {
-    return <InputForm />;
+  const displayForm = (data) => {
+    // data = props.display that is the firebase's rtdb JSON tree
+    return <InputForm data={data} />;
   };
 
   const displayDone = () => {
@@ -120,7 +121,7 @@ const HomePage = (props) => {
           )}
 
           {/* display form section if "yes" button is clicked opened */}
-          {showForm && displayForm()}
+          {showForm && displayForm(props.display)}
 
           <section className={styles.introBox}>
             <div className={styles.question}>
