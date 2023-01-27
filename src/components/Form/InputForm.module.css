@@ -19,7 +19,7 @@
   flex-direction: wrap;
   justify-content: space-between;
 
-  margin: 4rem 3rem;
+  margin: 2rem 3rem;
 }
 
 /* LEFT - questions */
@@ -58,7 +58,7 @@
 .dateSelectButtons {
   width: 40%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 /* formSection container */

@@ -5,8 +5,6 @@ import Input from "../Interactions/Input";
 import styles from "./InputForm.module.css";
 
 const FormSection = (props) => {
-  console.log("Displaying some form");
-
   //////////////////
   // initial states
   //////////////////

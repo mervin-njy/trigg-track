@@ -57,7 +57,6 @@ const InputForm = (props) => {
   const handleShowVariables = () => setDisplayVariables(true);
 
   const showForm = (dataType, type) => {
-    console.log("showing form");
     return <FormSection type={type} questions={Object.keys(dataType)} />;
   };
 
