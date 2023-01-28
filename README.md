@@ -35,7 +35,7 @@ In this project, the conditions to be studied is my eczema, while observing the 
 
 The app's design is catered to the general wellbeing of our users, through the use of a minimalist display of information that is easy for the eyes, accompanied with slow glowing buttons that prompts user actions for daily inputs.
 
-**Home Page**\
+**Home Page**
 
 In order to not overwhelm users with too much information, the home page greets users with 2 main questions:
 
@@ -43,13 +43,13 @@ In order to not overwhelm users with too much information, the home page greets 
 2. To ask if the user wants to be redirected to view their tracked history.
    ![TriggTrack Wireframe 01](https://i.imgur.com/QSmm5yz.png "TriggTrack Wireframe 01")
 
-**Input Form**\
+**Input Form**
 
 Following the user's action, if the form input option has been selected, the individual form sections will open up for users to choose their date, condition, and variables respectively.
 
 ![TriggTrack Wireframe 02](https://i.imgur.com/vD9weMl.png "TriggTrack Wireframe 02")
 
-**Track History**\
+**Track History**
 
 The records can be viewed by selecting the month to dispay. This triggers a list of individual date's records to be displayed throughout the page.
 
@@ -80,6 +80,6 @@ In the future, I would like user accounts to have their own list of conditions a
 **Trigg.Track to other functions:**
 Once the app has enough users, I aim to incorporate other features that extends their user interactions to further supports their condition tracking.
 
-1. Trigg.Track. to Chit.Chat. This connects users with similar conditions to a social platform that facilitates features like sharing of tips, communication, or event organizing of events.
-2. Trigg.Track. to Shake.Shack. Kidding they probably should avoid that.
-3. Trigg.Track. to Shit.Shat. Sorry just wanted to add 3 points. Will think of more in the future! Something along the lines of connecting them to sources of help - dieticians, physiologists etc.
+1. Trigg.Track. to Chit.Chat.\ This connects users with similar conditions to a social platform that facilitates features like sharing of tips, communication, or event organizing of events.
+2. Trigg.Track. to Shake.Shack.\ Kidding they probably should avoid that.
+3. Trigg.Track. to Shit.Shat.\ Sorry just wanted to add 3 points. Will think of more in the future! Something along the lines of connecting them to sources of help - dieticians, physiologists etc.
