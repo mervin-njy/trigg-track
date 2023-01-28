@@ -18,7 +18,7 @@ In this project, the conditions to be studied is my eczema, while observing the 
 1. Functional components
 2. Hookes are mostly useState and useEffect, and custom useFetch
 3. Using props and lifting state for mostly the user interactions with Input, Select and Button components.
-4. Hierachy of the components used:
+4. Hierachy of the components used:\
    <!-- image links [alt:] (url "title") -->
 
    ![TriggTrack App Hierachy](https://i.imgur.com/6Znqjfk.png "TriggTrack Hierachy")
@@ -35,19 +35,22 @@ In this project, the conditions to be studied is my eczema, while observing the 
 
 The app's design is catered to the general wellbeing of our users, through the use of a minimalist display of information that is easy for the eyes, accompanied with slow glowing buttons that prompts user actions for daily inputs.
 
-**Home Page**\\
+**Home Page**\
+
 In order to not overwhelm users with too much information, the home page greets users with 2 main questions:
 
 1. To request for inputs, depending on whether the current date has been filled.
 2. To ask if the user wants to be redirected to view their tracked history.
    ![TriggTrack Wireframe 01](https://i.imgur.com/QSmm5yz.png "TriggTrack Wireframe 01")
 
-**Input Form**\\
+**Input Form**\
+
 Following the user's action, if the form input option has been selected, the individual form sections will open up for users to choose their date, condition, and variables respectively.
 
 ![TriggTrack Wireframe 02](https://i.imgur.com/vD9weMl.png "TriggTrack Wireframe 02")
 
-**Track History**\\
+**Track History**\
+
 The records can be viewed by selecting the month to dispay. This triggers a list of individual date's records to be displayed throughout the page.
 
 ![TriggTrack Wireframe 03](https://i.imgur.com/kjIrA96.png "TriggTrack Wireframe 03")
