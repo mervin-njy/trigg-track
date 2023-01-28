@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Select from "../Interactions/Select";
 import Button from "../Interactions/Button";
-import Input from "../Interactions/Input";
 import FormSection from "./FormSection";
 
 import date from "../../dateArrays";
