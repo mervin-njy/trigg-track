@@ -19,6 +19,7 @@ In this project, the conditions to be studied is my eczema, while observing the 
 2. Hookes are mostly useState and useEffect, and custom useFetch
 3. Using props and lifting state for mostly the user interactions with Input, Select and Button components.
 4. Hierachy of the components used:\
+
    <!-- image links [alt:] (url "title") -->
 
    ![TriggTrack App Hierachy](https://i.imgur.com/6Znqjfk.png "TriggTrack Hierachy")
@@ -41,6 +42,7 @@ In order to not overwhelm users with too much information, the home page greets 
 
 1. To request for inputs, depending on whether the current date has been filled.
 2. To ask if the user wants to be redirected to view their tracked history.
+
    ![TriggTrack Wireframe 01](https://i.imgur.com/QSmm5yz.png "TriggTrack Wireframe 01")
 
 **Input Form**
@@ -69,17 +71,20 @@ The records can be viewed by selecting the month to dispay. This triggers a list
 In the future, I would like user accounts to have their own list of conditions and variables to track.
 
 1. Before that, it is important to ensure that the data structure that can be universally used with the react components make sense.
-2. .
-3. .
 
-**Customized conditions & variation inputs:**
+**Customized conditions & variables inputs:**
+**As of 2023-01-28:** conditions and variables are fixed to the existing options from the database.
 
-1. .
-2. .
+1. I will convert the question in the form to a input field as well.
+2. "+" button to be added below the question to input new lines per condition/variable category.
+3. "+" button to be added below the answer to input new lines per condition/variable category.
 
 **Trigg.Track to other functions:**
 Once the app has enough users, I aim to incorporate other features that extends their user interactions to further supports their condition tracking.
 
-1. Trigg.Track. to Chit.Chat.\ This connects users with similar conditions to a social platform that facilitates features like sharing of tips, communication, or event organizing of events.
-2. Trigg.Track. to Shake.Shack.\ Kidding they probably should avoid that.
-3. Trigg.Track. to Shit.Shat.\ Sorry just wanted to add 3 points. Will think of more in the future! Something along the lines of connecting them to sources of help - dieticians, physiologists etc.
+1. Trigg.Track. to Chit.Chat.
+   This connects users with similar conditions to a social platform that facilitates features like sharing of tips, communication, or event organizing of events.
+2. Trigg.Track. to Shake.Shack.
+   Kidding they probably should avoid that.
+3. Trigg.Track. to Shit.Shat.
+   Sorry just wanted to add 3 points. Will think of more in the future! Something along the lines of connecting them to sources of help - dieticians, physiologists etc.
